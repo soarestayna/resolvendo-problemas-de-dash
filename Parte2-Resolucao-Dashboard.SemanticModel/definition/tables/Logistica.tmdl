@@ -1,0 +1,132 @@
+table Logistica
+	lineageTag: 3fba7e78-dfb4-4055-b689-63f3d11e8409
+
+	column ID_Pedido
+		dataType: int64
+		formatString: 0
+		lineageTag: 9f5c1eab-1ff1-4c1b-bf0f-1222845f0291
+		summarizeBy: sum
+		sourceColumn: ID_Pedido
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Vendedor
+		dataType: int64
+		formatString: 0
+		lineageTag: 84e24e32-a32b-4148-9fcd-4cc8033d7c01
+		summarizeBy: sum
+		sourceColumn: ID_Vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Cliente
+		dataType: int64
+		formatString: 0
+		lineageTag: b1f28a3a-ff67-4c5f-b931-8b6aeb73a98c
+		summarizeBy: sum
+		sourceColumn: ID_Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Equipe_Entrega
+		dataType: string
+		lineageTag: 0d0c8a7f-3e33-42af-b80b-b346a5502a93
+		summarizeBy: none
+		sourceColumn: Equipe_Entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cliente
+		dataType: string
+		lineageTag: a82aafde-76b8-48ad-9b5c-ce9fdeaa5a0e
+		summarizeBy: none
+		sourceColumn: Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Canal_Entrega
+		dataType: string
+		lineageTag: bea216c3-36f2-40eb-bb53-fbc153f2ea01
+		summarizeBy: none
+		sourceColumn: Canal_Entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Cidade
+		dataType: int64
+		formatString: 0
+		lineageTag: b9704769-1c40-46d5-acab-4880732fa5ff
+		summarizeBy: sum
+		sourceColumn: ID_Cidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data_Pedido
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: abdd8552-e5e1-49c6-8e82-ec54c9f1f0b7
+		summarizeBy: none
+		sourceColumn: Data_Pedido
+
+		variation Variation
+			isDefault
+			relationship: 10655d2d-2fbb-4668-ac9e-a063867226de
+			defaultHierarchy: LocalDateTable_62c29ff2-1431-4ba5-b031-97d7de4f663a.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Data_Entrega_Prevista
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 974f66ab-9d2a-4733-831f-a56f57387d56
+		summarizeBy: none
+		sourceColumn: Data_Entrega_Prevista
+
+		variation Variation
+			isDefault
+			relationship: 2cc00199-ae08-44e6-9ed2-73f88b407d23
+			defaultHierarchy: LocalDateTable_c5126b18-c9dc-4651-9bb3-eac462f53d74.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Data_Entrega_Realizada
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 14d8c66a-b11a-4772-81fa-5986248f22c3
+		summarizeBy: none
+		sourceColumn: Data_Entrega_Realizada
+
+		variation Variation
+			isDefault
+			relationship: 8d18a40b-c166-4b21-986e-d576efe1993b
+			defaultHierarchy: LocalDateTable_8b16377e-499b-4929-aa31-bb11162c8378.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Status_Entrega
+		dataType: string
+		lineageTag: f20fdd4d-381b-487b-b839-7991864955c4
+		summarizeBy: none
+		sourceColumn: Status_Entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Logistica = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\LEAO\OneDrive\Documentos\DSA - Data Science Academy\Cap07\Mini-Projeto4-Parte1\dataset.xlsx"), null, true),
+				    Logistica_Sheet = Fonte{[Item="Logistica",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Logistica_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"ID_Pedido", Int64.Type}, {"ID_Vendedor", Int64.Type}, {"ID_Cliente", Int64.Type}, {"Equipe_Entrega", type text}, {"Cliente", type text}, {"Canal_Entrega", type text}, {"ID_Cidade", Int64.Type}, {"Data_Pedido", type date}, {"Data_Entrega_Prevista", type date}, {"Data_Entrega_Realizada", type date}, {"Status_Entrega", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,96 @@
+{
+  "config": "{\"version\":\"5.40\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY22SU11\",\"version\":\"5.40\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY22SU11",
+            "path": "BaseThemes/CY22SU11.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Dashboard",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"004206f97eb42cf6d43d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":11.985018726591761,\"y\":80.29962546816479,\"z\":0,\"width\":659.1760299625469,\"height\":243.29588014981275}}],\"singleVisual\":{\"visualType\":\"areaChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Logistica.Canal_Entrega\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(Logistica.Status_Entrega)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"Logistica\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Status_Entrega\"}},\"Function\":2},\"Name\":\"CountNonNull(Logistica.Status_Entrega)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Canal_Entrega\"},\"Name\":\"Logistica.Canal_Entrega\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Status_Entrega\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total de Entregas No Prazo Por Canal de Entrega'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 243.30,
+          "width": 659.18,
+          "x": 11.99,
+          "y": 80.30,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"67c3b61e2983df9c8b61\",\"layouts\":[{\"id\":0,\"position\":{\"x\":19.82788296041308,\"y\":544.0275387263339,\"z\":3000,\"width\":651.84165232358,\"height\":178.4509466437177}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Logistica.ID_Cidade\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(Logistica.Status_Entrega)\"}],\"Series\":[{\"queryRef\":\"Logistica.Status_Entrega\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"Logistica\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"ID_Cidade\"},\"Name\":\"Logistica.ID_Cidade\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Status_Entrega\"}},\"Function\":5},\"Name\":\"CountNonNull(Logistica.Status_Entrega)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Status_Entrega\"},\"Name\":\"Logistica.Status_Entrega\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Status_Entrega\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total de Entregas com Atraso Por Cidade'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 178.45,
+          "width": 651.84,
+          "x": 19.83,
+          "y": 544.03,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"7a80036213d2ee023b3a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":671.1610486891386,\"y\":80.29962546816479,\"z\":1000,\"width\":600.4494382022472,\"height\":243.29588014981275}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Logistica.Equipe_Entrega\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(Logistica.Status_Entrega)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"Logistica\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Status_Entrega\"}},\"Function\":5},\"Name\":\"CountNonNull(Logistica.Status_Entrega)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Equipe_Entrega\"},\"Name\":\"Logistica.Equipe_Entrega\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Status_Entrega\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Percentual de Entregas Por Equipe'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 243.30,
+          "width": 600.45,
+          "x": 671.16,
+          "y": 80.30,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"81ac3a73a6436d5d0b95\",\"layouts\":[{\"id\":0,\"position\":{\"x\":11.985018726591761,\"y\":9.588014981273409,\"z\":6000,\"width\":1268.0149812734082,\"height\":56.329588014981276}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Identifique os Problemas e Faça as Correções\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"18pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]}}}",
+          "filters": "[]",
+          "height": 56.33,
+          "width": 1268.02,
+          "x": 11.99,
+          "y": 9.59,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"d22240e366977044014e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20.374531835205993,\"y\":333.1835205992509,\"z\":2000,\"width\":650.7865168539327,\"height\":191.76029962546818}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(Logistica.Status_Entrega)\"}],\"Category\":[{\"queryRef\":\"Logistica.Data_Entrega_Realizada.Variation.Hierarquia de datas.Ano\",\"active\":true},{\"queryRef\":\"Logistica.Data_Entrega_Realizada.Variation.Hierarquia de datas.Trimestre\",\"active\":true},{\"queryRef\":\"Logistica.Data_Entrega_Realizada.Variation.Hierarquia de datas.Mês\",\"active\":true},{\"queryRef\":\"Logistica.Data_Entrega_Realizada.Variation.Hierarquia de datas.Dia\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"Logistica\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Status_Entrega\"}},\"Function\":5},\"Name\":\"CountNonNull(Logistica.Status_Entrega)\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Name\":\"Variation\",\"Property\":\"Data_Entrega_Realizada\"}},\"Hierarchy\":\"Hierarquia de datas\"}},\"Level\":\"Ano\"},\"Name\":\"Logistica.Data_Entrega_Realizada.Variation.Hierarquia de datas.Ano\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Name\":\"Variation\",\"Property\":\"Data_Entrega_Realizada\"}},\"Hierarchy\":\"Hierarquia de datas\"}},\"Level\":\"Trimestre\"},\"Name\":\"Logistica.Data_Entrega_Realizada.Variation.Hierarquia de datas.Trimestre\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Name\":\"Variation\",\"Property\":\"Data_Entrega_Realizada\"}},\"Hierarchy\":\"Hierarquia de datas\"}},\"Level\":\"Mês\"},\"Name\":\"Logistica.Data_Entrega_Realizada.Variation.Hierarquia de datas.Mês\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Name\":\"Variation\",\"Property\":\"Data_Entrega_Realizada\"}},\"Hierarchy\":\"Hierarquia de datas\"}},\"Level\":\"Dia\"},\"Name\":\"Logistica.Data_Entrega_Realizada.Variation.Hierarquia de datas.Dia\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total de Entregas Por Mês'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 191.76,
+          "width": 650.79,
+          "x": 20.37,
+          "y": 333.18,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"de3931a1c0c7f6cdb3d0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":670.4302925989673,\"y\":333.3562822719449,\"z\":5000,\"width\":601.0327022375214,\"height\":192.08261617900172}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Logistica.ID_Vendedor\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(Logistica.Status_Entrega)\"}],\"Series\":[{\"queryRef\":\"Logistica.Status_Entrega\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"Logistica\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"ID_Vendedor\"},\"Name\":\"Logistica.ID_Vendedor\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Status_Entrega\"}},\"Function\":5},\"Name\":\"CountNonNull(Logistica.Status_Entrega)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Status_Entrega\"},\"Name\":\"Logistica.Status_Entrega\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Status_Entrega\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total de Entregas de Produtos dos Top 5 Vendedores'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 192.08,
+          "width": 601.03,
+          "x": 670.43,
+          "y": 333.36,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"eadda65e3e7045a50186\",\"layouts\":[{\"id\":0,\"position\":{\"x\":671,\"y\":544,\"width\":609,\"height\":176,\"z\":4000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(Logistica.Status_Entrega)\"}],\"Category\":[{\"queryRef\":\"Logistica.Status_Entrega\",\"active\":true}],\"Series\":[{\"queryRef\":\"Logistica.Status_Entrega\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"Logistica\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Status_Entrega\"},\"Name\":\"Logistica.Status_Entrega\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Status_Entrega\"}},\"Function\":5},\"Name\":\"CountNonNull(Logistica.Status_Entrega)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Status_Entrega\"}},\"Function\":5}}}]},\"columnProperties\":{\"CountNonNull(Logistica.Status_Entrega)\":{\"displayName\":\"Total\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Percentual de Entregas Por Status de Entrega'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 176.00,
+          "width": 609.00,
+          "x": 671.00,
+          "y": 544.00,
+          "z": 4000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

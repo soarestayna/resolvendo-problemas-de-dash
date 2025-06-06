@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "conceptualSchemaSettings": {},
+  "queries": [
+    {
+      "name": "Logistica",
+      "lineageTag": "f91b0ff8-841b-4244-a0fc-02dbe722bfea",
+      "text": [
+        "let",
+        "    Fonte = Excel.Workbook(File.Contents(\"C:\\Users\\OneDrive\\Documents\\PowerBIDSA\\Cap07\\dataset.xlsx\"), null, true),",
+        "    Logistica_Sheet = Fonte{[Item=\"Logistica\",Kind=\"Sheet\"]}[Data],",
+        "    #\"Cabeçalhos Promovidos\" = Table.PromoteHeaders(Logistica_Sheet, [PromoteAllScalars=true]),",
+        "    #\"Tipo Alterado\" = Table.TransformColumnTypes(#\"Cabeçalhos Promovidos\",{{\"ID_Pedido\", Int64.Type}, {\"ID_Vendedor\", Int64.Type}, {\"ID_Cliente\", Int64.Type}, {\"Equipe_Entrega\", type text}, {\"Cliente\", type text}, {\"Canal_Entrega\", type text}, {\"ID_Cidade\", Int64.Type}, {\"Data_Pedido\", type date}, {\"Data_Entrega_Prevista\", type date}, {\"Data_Entrega_Realizada\", type date}, {\"Status_Entrega\", type text}})",
+        "in",
+        "    #\"Tipo Alterado\""
+      ],
+      "isDirectQuery": false,
+      "resultType": "Table"
+    }
+  ],
+  "queryGroups": [],
+  "culture": "en-CA",
+  "firewallEnabled": true
+}

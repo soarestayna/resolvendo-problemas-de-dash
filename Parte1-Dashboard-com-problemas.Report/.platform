@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Parte1-Dashboard-com-problemas"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "acd81ea9-7489-4e42-b23f-2256a2f4157d"
+  }
+}
